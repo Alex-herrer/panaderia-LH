@@ -1,0 +1,245 @@
+.outfit-<uniquifier> {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+font-family: Outfit;
+}
+body{
+    background: #dadada;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.logo-tipo{
+    color: black;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #b1cdf0;
+    padding: 10px 20px;
+    color: #fff;
+}
+.nav-country{
+    display: flex;
+    align-items: end;
+    margin-left: 15px;
+    font-size: 13px;
+    color: black;
+}
+.nav-country h1{
+    color: black;
+    font-size: 14px;
+}
+.nav-search{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    color: gray;
+    max-width: 999px;
+    border-radius: 4px;
+    margin-left: 15px;
+}
+.nav-search-gategory{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 5px;
+    background: #e5e5e5;
+    border-radius: 4px 0 0 4px;
+}
+.nav-search-input{
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    width: 100%;
+}
+.nav-search-icon{
+    max-width: 41px;
+    padding: 8px;
+    background: #ffffff;
+    border-radius: 0 4px 4px 0;
+}
+.nav-lenguaje{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-weight: 600px;
+    margin-left: 15px;
+    color: black;
+}
+.nav-text{
+    margin-left: 15px;
+}
+.nav-text p{
+    font-size: 12px;
+    color: black;
+}
+.nav-text h1{
+    font-size: 14px;
+    color: black;
+}
+.nav-cart{
+    display: flex;
+    align-items: center;
+    margin: 0px 15px;
+}
+.nav-cart h4{
+    font-size: 15px;
+    color: black;
+}
+.nav-bottom div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+}
+.nav-bottom{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 8px 20px;
+    background: #7299c8;
+    color: #fff;
+    font-size: 15px;
+}
+.header-slider ul{
+    display: flex;
+    overflow: hidden;
+}
+.header-img{
+    max-width: 100%;
+    mask-image: linear-gradient(to bottom, #000000 50%, transparent 100%);
+}
+.header-slider a{
+    position: absolute;
+    top: 20%;
+    z-index: 1;
+    padding: 5vh 1vw;
+    background: #ffffff4f;
+    color: #0000007b;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+}
+.control_next{
+    right: 0;
+}
+
+.header-slider {
+    position: relative;
+    width: 100%;
+    height: 450px;          /* ajusta la altura a tu gusto */
+    overflow: hidden;
+}
+
+.header-slider ul {
+    padding: 0;
+    margin: 0;
+}
+
+.header-img {
+    width: 100%;
+    height: 450px;         
+    object-fit: cover;     
+    display: none;         
+}
+.box-row{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20PX;
+    justify-content: space-between;
+    margin: 20px 30px;
+}
+.box-col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+    background: #fff;
+    max-width: 24%;
+    min-height: 200px;
+}
+.box-col a{
+    font-size: 13px;
+    color: #009999;
+    font-weight: 500;
+}
+.box-col img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;  
+}
+.products-slider{
+    background: #fff;
+    margin: 0 30px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+.products-slider .products{
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    margin-top: 10px;
+}
+.products-slider .products img{
+    max-width:200px;
+    max-height: 650;
+}
+.products-slider .products::-webkit-scrollbar{
+    display: none;
+}
+@media (max-width: 768px) {
+
+    /* NAV */
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-country,
+    .nav-lenguaje,
+    .nav-text {
+        display: none; /* ocultamos lo menos importante */
+    }
+
+    .nav-search {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* SLIDER */
+    .header-slider {
+        height: 250px;
+    }
+
+    .header-img {
+        height: 250px;
+    }
+
+    /* PRODUCTOS */
+    .box-row {
+        margin: 10px;
+        gap: 10px;
+    }
+
+    .box-col {
+        max-width: 48%; /* 2 columnas en móvil */
+    }
+
+    .box-col img {
+        height: 150px;
+        object-fit: cover;
+    }
+}
