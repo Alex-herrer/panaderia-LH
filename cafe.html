@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanaderiaL.H.com</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gaseosa.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">
+            <img src="https://png.pngtree.com/png-clipart/20240826/original/pngtree-food-bakery-logo-vector-png-image_15850742.png" width="100" alt="">
+            <div class="logo-tipo">
+                <p>Panaderia L.H</p>
+            </div>
+            
+        </a>
+        <div class="nav-country">
+            <img src="https://png.pngtree.com/png-clipart/20250102/original/pngtree-location-symbol-png-image_18629542.png" height="20" alt="">
+            <div>
+                <p>Enviar a</p>
+                <h1>Managua NIC...</h1>
+            </div>
+        </div>
+        <div class="nav-search">
+            <div class="nav-search-gategory">
+                <p>Todo</p>
+                <img src="https://img.freepik.com/vector-premium/flecha-3d-apuntando-abajo-color-amarillo-ilustracion-vectorial_350503-2383.jpg" height="12" alt="">
+            </div>
+            <input type="text" class="nav-search-input" placeholder="Buscar PanaderiaLH">
+            <img src="https://cdn-icons-png.flaticon.com/512/10467/10467300.png" class="nav-search-icon" alt="">
+        </div>
+        <div class="nav-lenguaje">
+            <img src="https://www.wallpapers-for-desktop.eu/desktop/nicaragua-flag.jpg" width="25px" alt="">
+            <p>ES</p>
+            <img src="https://www.svgrepo.com/show/500841/dropdown.svg" width="10px" alt="">
+        </div>
+        <div class="nav-text">
+            <p>Hola Registrate</p>
+            <h1>Cuenta & Lista <img src="https://www.svgrepo.com/show/500841/dropdown.svg" width="10px" alt=""></h1>
+        </div>
+        <div class="nav-text">
+            <p>Retorno</p>
+            <h1>& Ordenes</h1>
+        </div>
+        <a href="" class="nav-cart">
+            <img src="https://static.vecteezy.com/system/resources/previews/012/589/464/original/shopping-cart-3d-icon-illustration-png.png" width="35px" alt="">
+            <h4>Carrito</h4>
+        </a>
+
+    </nav>
+ <div class="nav-bottom">
+    <div>
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/070/914/124/small_2x/3d-orange-and-brown-menu-clipboard-icon-isolated-on-transparent-background-png.png" width="25px" alt="">
+    </div>
+    <p>Ofertas de hoy</p>
+    <p>Servicio al cliente</p>
+    <p>Carrito de regalo</p>
+    <p>Lo mas pedido</p>
+ </div>
+
+ <section class="productos">
+
+     <div class="producto">
+        <img src="https://app.sazondelmayab.com/wp-content/uploads/2023/07/bebidas-01.jpg" alt="">
+        <h3>Café Regular</h3>
+        <p class="precio">C$ 8.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">-</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+    
+     <div class="producto">
+        <img src="https://mysliceofmexico.ca/wp-content/uploads/2021/02/000-cafe-con-leche.jpg" alt="">
+        <h3>Café con Leche</h3>
+        <p class="precio">C$ 10.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">-</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+     <div class="producto">
+        <img src="https://blog.cafeamerica.com.br/wp-content/uploads/2024/12/crema-do-cafe.jpg" alt="">
+        <h3>Café con Crema</h3>
+        <p class="precio">C$ 12.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">-</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://www.haushaltstipps.net/wp-content/uploads/cappucino-selber-machen.jpg" alt="">
+        <h3>Cappucino</h3>
+        <p class="precio">C$ 25.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">-</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://cdn3.tmbi.com/secure/RMS/attachments/37/1200x1200/exps37407_THE1213734_37407_WEB.jpg" alt="">
+        <h3>Cappucino con Crema</h3>
+        <p class="precio">C$ 20.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">-</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+     <div class="producto">
+        <img src="https://3.bp.blogspot.com/-CBeeF43S_C0/W8KSoN5SZJI/AAAAAAAAE74/6FPI-WlzqXkwv3dPYqJs14iU2cPZO7cjgCLcBGAs/s1600/shutterstock_237082540.jpg" alt="">
+        <h3>Cafe Helado</h3>
+        <p class="precio">C$ 15.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">-</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+     <div class="producto">
+        <img src="https://prod-app.breville.com/thumbnail/recipe/1726718718/Iced+Cafe+Mocha+1080x1440_V4_1080x1440.jpg" alt="">
+        <h3>Cafe Mocha</h3>
+        <p class="precio">C$ 20.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">-</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+ </section>
+
+ <footer>
+    <img src="https://png.pngtree.com/png-clipart/20240826/original/pngtree-food-bakery-logo-vector-png-image_15850742.png" width="50">
+    <p>@ 2021-2025, Panaderia L.H</p>
+</footer>
+ 
+  <script>
+function sumar(boton) {
+    let cantidad = boton.previousElementSibling;
+    cantidad.textContent = parseInt(cantidad.textContent) + 1;
+}
+
+function restar(boton) {
+    let cantidad = boton.nextElementSibling;
+    if (parseInt(cantidad.textContent) > 0) {
+        cantidad.textContent = parseInt(cantidad.textContent) - 1;
+    }
+}
+</script>
+
+  
+</body>

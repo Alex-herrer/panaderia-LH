@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanaderiaL.H.com</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gaseosa.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">
+            <img src="https://png.pngtree.com/png-clipart/20240826/original/pngtree-food-bakery-logo-vector-png-image_15850742.png" width="100" alt="">
+            <div class="logo-tipo">
+                <p>Panaderia L.H</p>
+            </div>
+            
+        </a>
+        <div class="nav-country">
+            <img src="https://png.pngtree.com/png-clipart/20250102/original/pngtree-location-symbol-png-image_18629542.png" height="20" alt="">
+            <div>
+                <p>Enviar a</p>
+                <h1>Managua NIC...</h1>
+            </div>
+        </div>
+        <div class="nav-search">
+            <div class="nav-search-gategory">
+                <p>Todo</p>
+                <img src="https://img.freepik.com/vector-premium/flecha-3d-apuntando-abajo-color-amarillo-ilustracion-vectorial_350503-2383.jpg" height="12" alt="">
+            </div>
+            <input type="text" class="nav-search-input" placeholder="Buscar PanaderiaLH">
+            <img src="https://cdn-icons-png.flaticon.com/512/10467/10467300.png" class="nav-search-icon" alt="">
+        </div>
+        <div class="nav-lenguaje">
+            <img src="https://www.wallpapers-for-desktop.eu/desktop/nicaragua-flag.jpg" width="25px" alt="">
+            <p>ES</p>
+            <img src="https://www.svgrepo.com/show/500841/dropdown.svg" width="10px" alt="">
+        </div>
+        <div class="nav-text">
+            <p>Hola Registrate</p>
+            <h1>Cuenta & Lista <img src="https://www.svgrepo.com/show/500841/dropdown.svg" width="10px" alt=""></h1>
+        </div>
+        <div class="nav-text">
+            <p>Retorno</p>
+            <h1>& Ordenes</h1>
+        </div>
+        <a href="" class="nav-cart">
+            <img src="https://static.vecteezy.com/system/resources/previews/012/589/464/original/shopping-cart-3d-icon-illustration-png.png" width="35px" alt="">
+            <h4>Carrito</h4>
+        </a>
+
+    </nav>
+ <div class="nav-bottom">
+    <div>
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/070/914/124/small_2x/3d-orange-and-brown-menu-clipboard-icon-isolated-on-transparent-background-png.png" width="25px" alt="">
+    </div>
+    <p>Ofertas de hoy</p>
+    <p>Servicio al cliente</p>
+    <p>Carrito de regalo</p>
+    <p>Lo mas pedido</p>
+ </div>
+
+ <section class="productos">
+
+    <div class="producto">
+        <img src="https://distribuidorashanghai.com/cdn/shop/files/cocacola.jpg?v=1689442552" alt="">
+        <h3>Coca-Cola 500ml</h3>
+        <p class="precio">C$ 20.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://secure.ce-tescoassets.com/assets/HU/836/5449000131836/ShotType1_540x540.jpg" alt="">
+        <h3>Coca-Cola Cero 500ml</h3>
+        <p class="precio">C$ 20.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://www.arete.com.py/userfiles/images/productos/7840058000316.jpg" alt="">
+        <h3>Coca-Cola 1LT</h3>
+        <p class="precio">C$ 28.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://www.merkadomi.com/wp-content/uploads/2018/07/COCA-COLA-ORIGINAL-RETORNABLE-2L.jpg" alt="">
+        <h3>Coca-Cola 2LT</h3>
+        <p class="precio">C$ 47.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://www.coca-cola.com/content/dam/onexp/bo/es/brands/fanta/new/fanta_2_5_l_retornable.png" alt="">
+        <h3>Coca-Cola Fanta 2LT</h3>
+        <p class="precio">C$ 47.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/16816538/1047098365.jpg" alt="">
+        <h3>Pepsi 500ml</h3>
+        <p class="precio">C$ 18.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://www.cicalia.com/it/img/imgproducts/65309/xl_65309.jpg" alt="">
+        <h3>Seven Up 500ml</h3>
+        <p class="precio">C$ 18.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://comercializadorajm.com/wp-content/uploads/2021/01/98.jpg" alt="">
+        <h3>Jugo Jumex</h3>
+        <p class="precio">C$ 10.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://walmartcr.vtexassets.com/arquivos/ids/866510/8914_03.jpg?v=638750654432470000" alt="">
+        <h3>Pepsi 3Lt</h3>
+        <p class="precio">C$ 50.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://static.wixstatic.com/media/d2b1c5_c18cdc43739744e382df6287531c066a~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="">
+        <h3>Coca-Cola 3Lt</h3>
+        <p class="precio">C$ 55.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://plazavea.vteximg.com.br/arquivos/ids/21204011-1000-1000/20325393.jpg?v=638034706515430000" alt="">
+        <h3>BIG Cola 500ml</h3>
+        <p class="precio">C$ 15.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://vegaperu.vtexassets.com/arquivos/ids/160216/7750670016193.png?v=637916116884270000" alt="">
+        <h3>BIG Cola 3Lt</h3>
+        <p class="precio">C$ 48.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://www.coca-cola.com/content/dam/onexp/sg/en/home-images/brands/dasani/sg_dasani_prod_drinking-water_750x750_v1.jpg" alt="">
+        <h3>Agua</h3>
+        <p class="precio">C$ 25.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://walmartni.vtexassets.com/arquivos/ids/268739/Leche-La-Perfecta-Fresco-De-Cacao-473ml-2-2859.jpg?v=638156255037430000" alt="">
+        <h3>Fresco de Cacao</h3>
+        <p class="precio">C$ 19.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+     <div class="producto">
+        <img src="https://www.coca-cola.com/content/dam/onexp/py/es/brands/frugos/del-valle-fresh/del_valle_fresh_naranja.png" alt="">
+        <h3>Jugo del Valle</h3>
+        <p class="precio">C$ 17.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+     <div class="producto">
+        <img src="https://naranjomarket.com/wp-content/uploads/2020/06/raptor600ml.jpg" alt="">
+        <h3>Raptor 600ml</h3>
+        <p class="precio">C$ 18.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://walmartni.vtexassets.com/arquivos/ids/456713/59249_02.jpg?v=638610922962200000" alt="">
+        <h3>Kola Shaler 354ml</h3>
+        <p class="precio">C$ 13.00</p>
+
+        <div class="cantidad">
+            <button onclick="restar(this)">−</button>
+            <span>0</span>
+            <button onclick="sumar(this)">+</button>
+        </div>
+    </div>
+
+ </section>
+
+ <footer>
+    <img src="https://png.pngtree.com/png-clipart/20240826/original/pngtree-food-bakery-logo-vector-png-image_15850742.png" width="50">
+    <p>@ 2021-2025, Panaderia L.H</p>
+</footer>
+  
+  <script>
+function sumar(boton) {
+    let cantidad = boton.previousElementSibling;
+    cantidad.textContent = parseInt(cantidad.textContent) + 1;
+}
+
+function restar(boton) {
+    let cantidad = boton.nextElementSibling;
+    if (parseInt(cantidad.textContent) > 0) {
+        cantidad.textContent = parseInt(cantidad.textContent) - 1;
+    }
+}
+</script>
+
+  
+</body>
