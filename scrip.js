@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pastel = document.getElementById("pasteles");
   if (pastel) {
     pastel.addEventListener("click", () => {
-      alert("Contáctenos para decoración y el tipo de pastel que necesite 🍰");
+      alert("Contáctenos para decoración y el tipo de pastel que necesite");
     });
   }
 
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
 
-        alert("No se encontraron resultados 😕");
+        alert("No se encontraron resultados");
       }
     });
   }
