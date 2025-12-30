@@ -41,5 +41,4 @@ Para su realización utilicé:
 El objetivo principal es seguir mejorando mis habilidades y entender mejor cómo funciona JavaScript en proyectos reales.
 
 ## Cómo ejecutar el proyecto
-1. Clona el repositorio:
-   git clone https://github.com/Alex-herrer/panaderia-LH.git
+1. https://alex-herrer.github.io/panaderia-LH/
