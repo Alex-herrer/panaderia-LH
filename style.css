@@ -5,9 +5,6 @@
     box-sizing: border-box;
 font-family: Outfit;
 }
-body{
-    background: #dadada;
-}
 a{
     text-decoration: none;
     color: inherit;
@@ -134,7 +131,7 @@ nav{
 .header-slider {
     position: relative;
     width: 100%;
-    height: 450px;          /* ajusta la altura a tu gusto */
+    height: 450px;      
     overflow: hidden;
 }
 
@@ -197,7 +194,6 @@ nav{
 }
 @media (max-width: 768px) {
 
-    /* NAV */
     nav {
         flex-wrap: wrap;
         gap: 10px;
@@ -206,7 +202,7 @@ nav{
     .nav-country,
     .nav-lenguaje,
     .nav-text {
-        display: none; /* ocultamos lo menos importante */
+        display: none;
     }
 
     .nav-search {
@@ -214,7 +210,6 @@ nav{
         margin: 10px 0;
     }
 
-    /* SLIDER */
     .header-slider {
         height: 250px;
     }
@@ -223,14 +218,13 @@ nav{
         height: 250px;
     }
 
-    /* PRODUCTOS */
     .box-row {
         margin: 10px;
         gap: 10px;
     }
 
     .box-col {
-        max-width: 48%; /* 2 columnas en móvil */
+        max-width: 48%; 
     }
 
     .box-col img {
@@ -245,4 +239,84 @@ footer{
     color: #fff;
     background: #b1cdf0;
     padding: 20px 60px;
+}
+#contador-carrito,
+#total-carrito {
+  font-weight: bold;
+  color: #000;
+}
+.nav-cart p {
+    color: #000;
+    font-weight: bold;
+}
+.carrito-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.carrito-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+#lista-carrito > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+}
+#lista-carrito p {
+    margin: 4px 0;
+    color: #444;
+}
+.carrito-total {
+    margin-top: 25px;
+    padding: 15px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    text-align: right;
+}
+
+.carrito-total h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+}
+.btn-volver {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    background: #f0c14b;
+    color: #111;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.btn-volver:hover {
+    background: #ddb347;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url("imagenes/fondo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.carrito-container {
+    flex: 1;
 }

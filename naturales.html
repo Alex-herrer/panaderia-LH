@@ -44,9 +44,10 @@
             <p>Retorno</p>
             <h1>& Ordenes</h1>
         </div>
-        <a href="" class="nav-cart">
+        <a href="carrito.html" class="nav-cart">
             <img src="https://static.vecteezy.com/system/resources/previews/012/589/464/original/shopping-cart-3d-icon-illustration-png.png" width="35px" alt="">
-            <h4>Carrito</h4>
+            <h4>Carrito (<span id="contador-carrito">0</span>)</h4>
+            <p>Total: C$ <span id="total-carrito">0.00</span></p>
         </a>
 
     </nav>
@@ -62,7 +63,7 @@
 
   <section class="productos">
 
-    <div class="producto">
+    <div class="producto" data-id="34" data-nombre="Fresco de Cacao" data-precio="20">
         <img src="https://i.ytimg.com/vi/lEY5oLaXUNc/maxresdefault.jpg" alt="">
         <h3>Fresco de Cacao</h3>
         <p class="precio">C$ 20.00</p>
@@ -74,7 +75,7 @@
         </div>
     </div>
 
-    <div class="producto">
+    <div class="producto" data-id="35" data-nombre="Fresco de Chia" data-precio="15">
         <img src="https://recetasdenicaragua.com/recipes/wp-content/uploads/2018/09/Fresco-de-Chia.jpg" alt="">
         <h3>Fresco de Chia</h3>
         <p class="precio">C$ 15.00</p>
@@ -86,7 +87,7 @@
         </div>
     </div>
 
-    <div class="producto">
+    <div class="producto" data-id="36" data-nombre="Fresco de Calala" data-precio="15">
         <img src="https://comidas-nicaraguenses.com/wp-content/uploads/fresco-de-calala.jpg" alt="">
         <h3>Fresco de Calala</h3>
         <p class="precio">C$ 15.00</p>
@@ -98,7 +99,7 @@
         </div>
     </div>
 
-    <div class="producto">
+    <div class="producto" data-id="37" data-nombre="Fresco de Cebada" data-precio="15">
         <img src="https://travelfoodatlas.com/wp-content/uploads/2022/08/Fresco-de-Cebada-e1722964193345-735x550.jpg" alt="">
         <h3>Fresco de Cebada</h3>
         <p class="precio">C$ 15.00</p>
@@ -110,7 +111,7 @@
         </div>
     </div>
 
-    <div class="producto">
+    <div class="producto" data-id="38" data-nombre="Fresco de piña" data-precio="15">
         <img src="https://comidas-nicaraguenses.com/wp-content/uploads/34-image_web.jpg.webp" alt="">
         <h3>Fresco de piña</h3>
         <p class="precio">C$ 15.00</p>
@@ -122,7 +123,7 @@
         </div>
     </div>
 
-    <div class="producto">
+    <div class="producto" data-id="39" data-nombre="Fresco de Frutas" data-precio="20">
         <img src="https://www.laylita.com/recetas/wp-content/uploads/2011/12/Come-y-bebe-ensalada-de-frutas.jpg" alt="">
         <h3>Fresco de Frutas</h3>
         <p class="precio">C$ 20.00</p>
@@ -134,7 +135,7 @@
         </div>
     </div>
 
-    <div class="producto">
+    <div class="producto" data-id="40" data-nombre="Fresco de Chicha" data-precio="15">
         <img src="https://recetasdenicaragua.com/recipes/wp-content/uploads/2018/11/fresco-de-chicha-nicaraguense.jpg" alt="">
         <h3>Fresco de Chicha</h3>
         <p class="precio">C$ 15.00</p>
@@ -153,19 +154,6 @@
     <p>@ 2021-2025, Panaderia L.H</p>
 </footer>
 
-   <script>
-function sumar(boton) {
-    let cantidad = boton.previousElementSibling;
-    cantidad.textContent = parseInt(cantidad.textContent) + 1;
-}
-
-function restar(boton) {
-    let cantidad = boton.nextElementSibling;
-    if (parseInt(cantidad.textContent) > 0) {
-        cantidad.textContent = parseInt(cantidad.textContent) - 1;
-    }
-}
-</script>
-
+<script src="scrip.js"></script>
  </body>
  </html>
