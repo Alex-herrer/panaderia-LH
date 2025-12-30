@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito | Panaderia L.H</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <nav>
@@ -49,30 +50,37 @@
         <h1>& Ordenes</h1>
     </div>
 
-     <a href="carrito.html" class="nav-cart">
-            <img src="https://static.vecteezy.com/system/resources/previews/012/589/464/original/shopping-cart-3d-icon-illustration-png.png" width="35px" alt="">
-            <h4>Carrito (<span id="contador-carrito">0</span>)</h4>
-            <p>Total: C$ <span id="total-carrito">0.00</span></p>
-        </a>
+    <a href="carrito.html" class="nav-cart">
+        <img src="https://static.vecteezy.com/system/resources/previews/012/589/464/original/shopping-cart-3d-icon-illustration-png.png" width="35px" alt="">
+        <h4>Carrito (<span id="contador-carrito">0</span>)</h4>
+        <p>Total: C$ <span id="total-carrito">0.00</span></p>
+    </a>
 </nav>
 
-<section class="carrito-container">
-    <h2>Tu Carrito</h2>
+<main class="contenido">
 
-    <div id="lista-carrito">
-    
-    </div>
+    <section class="carrito-container">
+        <h2>Tu Carrito</h2>
 
-    <div class="carrito-total">
-        <h3>Total a pagar: C$ <span id="total-final">0.00</span></h3>
-    </div>
+        <div id="lista-carrito">
+        
+        </div>
 
-    <a href="index.html" class="btn-volver">← Seguir comprando</a>
-</section>
+        <div class="carrito-total">
+            <h3>Total a pagar: C$ <span id="total-final">0.00</span></h3>
+        </div>
+
+        <div class="acciones-carrito">
+            <a href="index.html" class="btn-volver">← Seguir comprando</a>
+            <button class="btn-pagar" onclick="pagar()">Pagar</button>
+        </div>
+    </section>
+
+</main>
 
 <footer>
     <img src="https://png.pngtree.com/png-clipart/20240826/original/pngtree-food-bakery-logo-vector-png-image_15850742.png" width="50">
-    <p>@ 2021-2025, Panaderia L.H</p>
+    <p>© 2021-2025, Panaderia L.H</p>
 </footer>
 
 <script src="scrip.js"></script>

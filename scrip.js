@@ -1,5 +1,8 @@
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
 document.addEventListener("DOMContentLoaded", () => {
+  actualizarContador();
+  actualizarTotal();
 
   const imgs = document.querySelectorAll(".header-slider ul img");
   const prevBtn = document.querySelector(".control_prev");
@@ -26,196 +29,157 @@ document.addEventListener("DOMContentLoaded", () => {
     showSlide();
     autoSlide = setInterval(nextSlide, 3000);
 
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        clearInterval(autoSlide);
-        nextSlide();
-        autoSlide = setInterval(nextSlide, 3000);
-      });
-    }
+    nextBtn?.addEventListener("click", () => {
+      clearInterval(autoSlide);
+      nextSlide();
+    });
 
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        clearInterval(autoSlide);
-        prevSlide();
-        autoSlide = setInterval(nextSlide, 3000);
-      });
-    }
+    prevBtn?.addEventListener("click", () => {
+      clearInterval(autoSlide);
+      prevSlide();
+    });
   }
 
-  const scrollContainers = document.querySelectorAll(".products");
-
-  scrollContainers.forEach(container => {
-    container.addEventListener(
-      "wheel",
-      (e) => {
-        e.preventDefault();
-        container.scrollLeft += e.deltaY * 1.5;
-      },
-      { passive: false }
-    );
+  document.querySelectorAll(".producto").forEach(producto => {
+    const id = producto.dataset.id;
+    const span = producto.querySelector(".cantidad span");
+    const encontrado = carrito.find(p => p.id === id);
+    if (encontrado) span.textContent = encontrado.cantidad;
   });
 
-  const pastel = document.getElementById("pasteles");
-  if (pastel) {
-    pastel.addEventListener("click", () => {
-      alert("Contáctenos para decoración y el tipo de pastel que necesite");
-    });
-  }
-
-  const buscador = document.getElementById("buscador");
-
-  const rutas = {
-    "coca cola": "gaseosa.html",
-    "coca": "gaseosa.html",
-    "pepsi": "gaseosa.html",
-
-    "refresco": "naturales.html",
-    "cacao": "naturales.html",
-    "chia": "naturales.html",
-
-    "cafe": "cafe.html",
-    "capuccino": "cafe.html",
-
-    "pan": "panes.html",
-    "pan dulce": "panes.html",
-
-    "pastel": "pasteles.html",
-    "torta": "panes.html"
-  };
-
-  if (buscador) {
-    buscador.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        const texto = buscador.value.toLowerCase().trim();
-
-        for (let palabra in rutas) {
-          if (texto.includes(palabra)) {
-            window.location.href = rutas[palabra];
-            return;
-          }
-        }
-
-        alert("No se encontraron resultados");
-      }
-    });
-  }
-  let guardado = localStorage.getItem("carrito");
-  if (guardado) {
-    carrito = JSON.parse(guardado);
-    actualizarContador();
-    actualizarTotal();
-  }
-  const productos = document.querySelectorAll(".producto");
-
-productos.forEach(producto => {
-  const id = producto.dataset.id;
-  const span = producto.querySelector(".cantidad span");
-
-  const encontrado = carrito.find(p => p.id === id);
-
-  if (encontrado) {
-    span.textContent = encontrado.cantidad;
-  }
-});
-
+  renderCarrito();
 });
 
 function guardarCarrito() {
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 function actualizarContador() {
-    let total = 0;
-    for (let p of carrito) {
-        total += p.cantidad;
-    }
-    document.getElementById("contador-carrito").textContent = total;
+  const contador = document.getElementById("contador-carrito");
+  if (!contador) return;
+  contador.textContent = carrito.reduce((acc, p) => acc + p.cantidad, 0);
 }
 
 function actualizarTotal() {
-    let total = 0;
-    for (let p of carrito) {
-        total += p.precio * p.cantidad;
-    }
-    document.getElementById("total-carrito").textContent = total.toFixed(2);
+  const totalSpan = document.getElementById("total-carrito");
+  if (!totalSpan) return;
+  const total = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
+  totalSpan.textContent = total.toFixed(2);
 }
 
-function sumar(boton) {
-    let producto = boton.closest(".producto");
+function sumar(btn) {
+  const producto = btn.closest(".producto");
+  const { id, nombre, precio } = producto.dataset;
+  const span = btn.previousElementSibling;
 
-    let id = producto.dataset.id;
-    let nombre = producto.dataset.nombre;
-    let precio = parseFloat(producto.dataset.precio);
+  let item = carrito.find(p => p.id === id);
 
-    let span = boton.previousElementSibling;
-    let cantidad = parseInt(span.textContent) + 1;
-    span.textContent = cantidad;
-
-    let encontrado = carrito.find(p => p.id === id);
-
-    if (encontrado) {
-        encontrado.cantidad = cantidad;
-    } else {
-        carrito.push({ id, nombre, precio, cantidad });
-    }
-
-    guardarCarrito();
-    actualizarContador();
-    actualizarTotal();
-}
-
-function restar(boton) {
-    let producto = boton.closest(".producto");
-    let id = producto.dataset.id;
-
-    let span = boton.nextElementSibling;
-    let cantidad = parseInt(span.textContent);
-
-    if (cantidad > 0) {
-        cantidad--;
-        span.textContent = cantidad;
-    }
-
-    let encontrado = carrito.find(p => p.id === id);
-
-    if (encontrado) {
-        encontrado.cantidad = cantidad;
-        if (cantidad === 0) {
-            carrito = carrito.filter(p => p.id !== id);
-        }
-    }
-
-    guardarCarrito();
-    actualizarContador();
-    actualizarTotal();
-}
-
-const listaCarrito = document.getElementById("lista-carrito");
-const totalFinal = document.getElementById("total-final");
-
-if (listaCarrito && totalFinal) {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    let total = 0;
-
-    listaCarrito.innerHTML = "";
-
-    carrito.forEach(producto => {
-        const div = document.createElement("div");
-        div.classList.add("item-carrito");
-
-        const subtotal = producto.precio * producto.cantidad;
-        total += subtotal;
-
-        div.innerHTML = `
-            <h4>${producto.nombre}</h4>
-            <p>Precio: C$ ${producto.precio}</p>
-            <p>Cantidad: ${producto.cantidad}</p>
-            <p><strong>Subtotal: C$ ${subtotal.toFixed(2)}</strong></p>
-        `;
-
-        listaCarrito.appendChild(div);
+  if (item) {
+    item.cantidad++;
+    span.textContent = item.cantidad;
+  } else {
+    carrito.push({
+      id,
+      nombre,
+      precio: parseFloat(precio),
+      cantidad: 1
     });
+    span.textContent = 1;
+  }
 
-    totalFinal.textContent = total.toFixed(2);
+  guardarCarrito();
+  actualizarContador();
+  actualizarTotal();
+}
+
+function restar(btn) {
+  const producto = btn.closest(".producto");
+  const id = producto.dataset.id;
+  const span = btn.nextElementSibling;
+
+  let item = carrito.find(p => p.id === id);
+  if (!item) return;
+
+  item.cantidad--;
+  span.textContent = Math.max(item.cantidad, 0);
+
+  if (item.cantidad <= 0) {
+    carrito = carrito.filter(p => p.id !== id);
+    span.textContent = 0;
+  }
+
+  guardarCarrito();
+  actualizarContador();
+  actualizarTotal();
+}
+
+function renderCarrito() {
+  const lista = document.getElementById("lista-carrito");
+  const totalFinal = document.getElementById("total-final");
+  if (!lista || !totalFinal) return;
+
+  lista.innerHTML = "";
+  let total = 0;
+
+  carrito.forEach(p => {
+    const subtotal = p.precio * p.cantidad;
+    total += subtotal;
+
+    const div = document.createElement("div");
+    div.className = "item-carrito";
+    div.innerHTML = `
+      <div>
+        <h4>${p.nombre}</h4>
+        <p>Precio: C$ ${p.precio}</p>
+      </div>
+
+      <div class="controles">
+        <button onclick="cambiarCantidad('${p.id}', -1)">−</button>
+        <span>${p.cantidad}</span>
+        <button onclick="cambiarCantidad('${p.id}', 1)">+</button>
+        <button class="btn-eliminar" onclick="eliminarProducto('${p.id}')">🗑</button>
+      </div>
+    `;
+    lista.appendChild(div);
+  });
+
+  totalFinal.textContent = total.toFixed(2);
+}
+
+function cambiarCantidad(id, cambio) {
+  const item = carrito.find(p => p.id === id);
+  if (!item) return;
+
+  item.cantidad += cambio;
+
+  if (item.cantidad <= 0) {
+    carrito = carrito.filter(p => p.id !== id);
+  }
+
+  guardarCarrito();
+  actualizarContador();
+  actualizarTotal();
+  renderCarrito();
+}
+
+function eliminarProducto(id) {
+  carrito = carrito.filter(p => p.id !== id);
+  guardarCarrito();
+  actualizarContador();
+  actualizarTotal();
+  renderCarrito();
+}
+
+function pagar() {
+  if (carrito.length === 0) {
+    alert("El carrito está vacío");
+    return;
+  }
+
+  alert("✅ Pago realizado con éxito\n¡Gracias por su compra!");
+  carrito = [];
+  guardarCarrito();
+  actualizarContador();
+  actualizarTotal();
+  renderCarrito();
 }

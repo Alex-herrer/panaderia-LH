@@ -303,7 +303,6 @@ footer{
 .btn-volver:hover {
     background: #ddb347;
 }
-
 html, body {
     height: 100%;
 }
@@ -311,12 +310,14 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    background-image: url("imagenes/fondo.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #dadada;
 }
-.carrito-container {
+
+main {
     flex: 1;
 }
+
+footer {
+    margin-top: auto;
+}
+
